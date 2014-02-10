@@ -94,7 +94,8 @@ public class MainWindow extends javax.swing.JFrame implements MouseListener, Act
 		
 		// Build UI grid
 		InitUI();
-		setSize(720, 280);
+		setSize(308, 339);
+		setTitle("Sudoku solver");
 	}
 	
 	private void InitUI() {
@@ -312,7 +313,7 @@ public class MainWindow extends javax.swing.JFrame implements MouseListener, Act
 	private void PrintGrid() {
 		for (int y=0; y<9; ++y) {
 			for (int x=0; x<9; ++x) {
-				labels[x][y].setText(grid[x][y].toString().replace("[", "").replace("]", ""));
+				labels[x][y].setText("<html>" + grid[x][y].toString().replace("[", "").replace("]", "").replace(",", ""));
 				if (grid[x][y].size() == 1) {
 					labels[x][y].setFont(new Font("Arial", Font.BOLD, 12));
 				}
